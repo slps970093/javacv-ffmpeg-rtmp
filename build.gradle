@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'app.cash.licensee' version '1.5.0'
+}
+
+group 'org.chou'
+version '1.0-SNAPSHOT'
+
+licensee {
+    allow('Apache-2.0')
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'org.bytedeco', name: 'javacv-platform', version: '1.5.7'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+}
+
+test {
+    useJUnitPlatform()
+}
